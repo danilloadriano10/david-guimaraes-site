@@ -1,0 +1,2 @@
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const imgs=document.querySelectorAll('.court img,.office img,.editorial img');window.addEventListener('scroll',()=>{imgs.forEach(img=>{const r=img.parentElement.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){const y=(innerHeight/2-(r.top+r.height/2))*.035;img.style.transform=`scale(1.04) translateY(${y}px)`}})},{passive:true});
